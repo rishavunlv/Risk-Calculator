@@ -1,0 +1,5 @@
+mkdocs>=1.5
+mkdocs-material>=9.0
+pytest>=7.0
+reportlab>=3.6
+streamlit>=1.0

@@ -1,0 +1,22 @@
+site_name: Risk Calculator
+site_description: Risk Calculator for CISO Budget Defense
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - About: about.md
+  - CISO Budget Defense: ciso-budget.md
+  - Small Business Reality Check: small-business.md
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js
+  - assets/js/pdf-template.js
+  - https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js
+  - assets/js/calculator.js
+  - assets/js/sector-data.js
+  - assets/js/smallbiz.js
+extra_css:
+  - assets/css/styles.css
+plugins:
+  - search
+site_dir: site

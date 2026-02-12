@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# Virtualenv
+.venv/
+venv/
+
+# MkDocs build output
+site/
+
+# OS
+.DS_Store
