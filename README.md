@@ -47,3 +47,4 @@ git push -u origin gh-pages --force
 Notes
 - The site performs client-side calculations and generates PDFs in the browser; no server is required. This makes GitHub Pages a perfect free host.
 - If you want the repository set up and pushed, provide access or push the changes yourself. I can provide a clean sequence of commands to create the repo and push the current code.
+# Risk-Calculator
