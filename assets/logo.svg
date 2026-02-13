@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#1e6fb3"/>
+      <stop offset="1" stop-color="#2a9df4"/>
+    </linearGradient>
+  </defs>
+  <rect rx="18" ry="18" width="120" height="120" fill="#f8fafc"/>
+  <circle cx="60" cy="48" r="28" fill="url(#g)" opacity="0.98" />
+  <path d="M46 56 L56 66 L76 46" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="60" y="102" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#0f172a">Risk Calculator</text>
+</svg>

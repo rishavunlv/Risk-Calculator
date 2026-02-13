@@ -1,0 +1,92 @@
+:root{
+  --rc-primary: #1e6fb3; /* deep blue */
+  --rc-accent: #2a9df4;  /* lighter blue */
+  --rc-muted: #6b7280;
+  --rc-bg: #ffffff;
+  --rc-surface: #f8fafc;
+  --rc-font: "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  font-family: var(--rc-font);
+}
+
+#ciso-form label{ display:block; margin:0.5rem 0; }
+#ciso-form input{ padding:0.35rem; border:1px solid #d1d5db; border-radius:4px; }
+#ciso-form button{ margin-right:0.5rem; padding:0.45rem 0.8rem; border:none; background:var(--rc-primary); color:white; border-radius:6px; cursor:pointer }
+#ciso-form button[type="button"]{ background:var(--rc-accent) }
+
+#report{
+  max-width:800px; margin-top:1rem; background:var(--rc-bg); border-radius:8px; box-shadow:0 6px 18px rgba(20,40,60,0.06); padding:1.25rem; border:1px solid #e6eef9;
+}
+
+.rc-header{ display:flex; align-items:center; gap:1rem; margin-bottom:1rem }
+.rc-logo{ width:68px; height:68px; display:inline-block }
+.rc-org{ font-size:1.15rem; font-weight:700; color:var(--rc-primary) }
+.rc-sub{ color:var(--rc-muted); font-size:0.95rem }
+
+.rc-section{ padding:0.75rem 0; border-top:1px dashed #eef4fb }
+.rc-table{ width:100%; border-collapse:collapse; margin-top:0.5rem }
+.rc-table td{ padding:0.35rem 0.5rem; vertical-align:top }
+.rc-key{ width:45%; color:var(--rc-muted); }
+.rc-val{ font-weight:600; color:#0f172a }
+
+.rc-summary{ background:var(--rc-surface); padding:0.8rem; border-radius:6px; margin-top:0.5rem }
+
+.rc-chart { margin-top:0.6rem; padding:0.6rem; background:linear-gradient(180deg, #ffffff 0%, #f7fbff 100%); border-radius:8px; border:1px solid #e6eef9 }
+
+.rc-signature{ margin-top:1.25rem; display:flex; justify-content:space-between; align-items:center }
+.rc-signature .line{ border-top:1px solid #d1d5db; width:60%; }
+.rc-signature .meta{ color:var(--rc-muted); font-size:0.9rem }
+
+@media print{
+  body { background:white }
+  #ciso-form, .md-nav, .md-header { display:none !important }
+  #report { box-shadow:none; border:none; margin:0; }
+}
+
+/* Hero styles for index page */
+.md-content h1 { color: var(--rc-primary); }
+.hero-tagline { color: var(--rc-muted); font-size:1.05rem; margin-bottom:1rem }
+
+/* Enhanced form input styling for Small Business page */
+#sb-form { display:block; gap:0.5rem; }
+#sb-form label { display:block; margin:0.6rem 0; color:var(--rc-primary); font-weight:600 }
+#sb-form input[type="number"],
+#sb-form input[type="text"],
+#sb-form select { 
+  width:100%;
+  padding:0.65rem 0.75rem;
+  border-radius:10px;
+  border:1px solid rgba(30,111,179,0.12);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  box-shadow: 0 4px 12px rgba(16,24,40,0.04), inset 0 1px 0 rgba(255,255,255,0.6);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 120ms ease;
+  font-size:0.98rem;
+}
+
+#sb-form input::placeholder { color: #94a3b8 }
+
+#sb-form input[type="number"]:focus,
+#sb-form input[type="text"]:focus,
+#sb-form select:focus {
+  outline: none;
+  border-color: var(--rc-accent);
+  box-shadow: 0 10px 30px rgba(42,157,244,0.12);
+  transform: translateY(-1px);
+}
+
+#sb-form fieldset { border:1px solid rgba(30,111,179,0.06); padding:0.6rem; border-radius:8px; background:#fbfdff }
+#sb-form legend { font-weight:700; color:var(--rc-primary) }
+
+#sb-form input[type="checkbox"], #sb-form input[type="radio"]{ transform:translateY(2px); margin-right:0.45rem }
+
+/* Make buttons stand out on Small Business form */
+#sb-form button{ padding:0.6rem 0.9rem; border-radius:8px; font-weight:700 }
+#sb-form button[type="submit"]{ background:var(--rc-primary) }
+#sb-form button[type="button"]{ background:var(--rc-accent) }
+
+/* subtle focus for accessibility when navigating with keyboard */
+button:focus, a:focus, input:focus, select:focus { box-shadow: 0 8px 24px rgba(30,111,179,0.10); }
+
+
