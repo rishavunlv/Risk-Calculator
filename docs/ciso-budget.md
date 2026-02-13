@@ -44,6 +44,4 @@ Use this calculator to compare the cost of a Cold Site (longer recovery) vs a Ho
   </div>
 </div>
 
-<script>
-// The actual calculation/formatting is in assets/js/calculator.js (loaded via mkdocs extra_javascript)
-</script>
+
