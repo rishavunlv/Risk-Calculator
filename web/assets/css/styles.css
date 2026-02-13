@@ -1,0 +1,43 @@
+/* Simple modern layout and colors for the class prototype */
+:root{
+  --bg:#f6f9fc;
+  --card:#ffffff;
+  --accent:#0a74ff;
+  --muted:#6b7280;
+  --green:#0a8a0a;
+  --max-width:1100px;
+}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);margin:0;color:#0f172a}
+.container{max-width:var(--max-width);margin:0 auto;padding:1rem}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:1rem}
+.logo{width:52px;height:52px}
+.site-header{background:linear-gradient(90deg,#fff 0%, #f8fafc 100%);border-bottom:1px solid #e6eef8}
+.grid{display:grid;grid-template-columns:320px 1fr;gap:1rem;padding:1.25rem}
+.panel{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(10,20,50,0.06)}
+.inputs label{display:block;margin-bottom:0.75rem}
+.inputs input[type=number], .inputs select{width:100%;padding:0.5rem;border-radius:6px;border:1px solid #e6eef8}
+.inputs input[type=range]{width:100%}
+.range-value{font-size:0.9rem;color:var(--muted);margin-top:0.25rem}
+fieldset{border:1px solid #e6eef8;padding:0.5rem;border-radius:6px;margin-bottom:0.75rem}
+fieldset legend{font-weight:600}
+.controls label, .dr label{display:block;margin-bottom:0.25rem}
+.actions{display:flex;gap:0.5rem;margin-top:1rem}
+button{background:var(--accent);color:white;padding:0.5rem 0.75rem;border-radius:8px;border:0;cursor:pointer;font-weight:600}
+button.secondary{background:#eef6ff;color:var(--accent)}
+.help{color:var(--muted);font-size:0.9rem;margin-top:0.5rem}
+.results .metrics{display:flex;gap:1rem}
+.metric{background:linear-gradient(180deg,#fbfdff,#ffffff);padding:0.6rem;border-radius:8px;flex:1;border:1px solid #eef6ff}
+.metric .label{font-size:0.9rem;color:var(--muted)}
+.value{font-size:1.1rem;font-weight:700;margin-top:0.35rem}
+.money-saved{margin-top:1rem;padding:0.75rem;background:#f0fdfa;border-radius:8px;border:1px solid #dcfce7}
+.money-saved .label{color:var(--muted)}
+.money{font-size:1.4rem;font-weight:800;color:var(--green)}
+.chart-wrap{margin-top:1rem}
+.methodology{margin-top:1rem;background:#fbfbff;padding:0.75rem;border-radius:8px;border:1px solid #eef2ff}
+.footer-note{font-size:0.9rem;color:var(--muted);margin-top:0.5rem}
+.site-footer{padding:1rem 0;margin-top:1rem;color:var(--muted);text-align:center}
+@media(max-width:880px){
+  .grid{grid-template-columns:1fr;}
+}

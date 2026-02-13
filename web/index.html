@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Risk Calculator — Small Business Reality Check</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <!-- html2pdf (client-side PDF) -->
+  <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="Logo" class="logo">
+        <h1>Small Business Reality Check</h1>
+      </div>
+      <nav class="nav"></nav>
+    </div>
+  </header>
+
+  <main class="container grid">
+    <section class="panel inputs">
+      <h2>Inputs</h2>
+      <label>Sector
+        <select id="sector">
+          <option>Healthcare</option>
+          <option>Finance</option>
+          <option selected>Retail</option>
+          <option>Manufacturing</option>
+        </select>
+      </label>
+
+      <label>Asset / Revenue (USD)
+        <input type="number" id="asset" value="100000" min="0" step="1000">
+      </label>
+
+      <label>Exposure Factor (EF %)
+        <input type="range" id="ef" min="0" max="100" value="100">
+        <div class="range-value"><span id="efVal">100</span>%</div>
+      </label>
+
+      <fieldset class="dr">
+        <legend>BCDR Strategy</legend>
+        <label><input type="radio" name="strategy" value="Cold Site" checked> Cold Site</label>
+        <label><input type="radio" name="strategy" value="Warm Site"> Warm Site</label>
+        <label><input type="radio" name="strategy" value="Hot Site"> Hot Site</label>
+      </fieldset>
+
+      <fieldset class="controls">
+        <legend>Controls</legend>
+        <label><input type="checkbox" id="mfa"> Multi-factor authentication (MFA)</label>
+        <label><input type="checkbox" id="phish"> Phishing training</label>
+        <label><input type="checkbox" id="succession"> Succession planning</label>
+      </fieldset>
+
+      <label class="toggle"><input type="checkbox" id="includeDr" checked> Include DR annual cost in ROSI</label>
+
+      <div class="actions">
+        <button id="compute">Compute</button>
+        <button id="downloadPdf">Download PDF</button>
+      </div>
+
+      <p class="help">PDF generation is client-side (browser). If your hosted site blocks it, use the Streamlit demo or download locally.</p>
+    </section>
+
+    <section class="panel results" id="reportArea">
+      <div class="report-top">
+        <h2>Results</h2>
+        <div class="metrics">
+          <div class="metric">
+            <div class="label">ALE (pre)</div>
+            <div id="alePre" class="value">$0</div>
+          </div>
+          <div class="metric">
+            <div class="label">ALE (post)</div>
+            <div id="alePost" class="value">$0</div>
+          </div>
+          <div class="metric">
+            <div class="label">ROSI</div>
+            <div id="rosi" class="value">0%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="money-saved">
+        <div class="label">Money saved by BCDR</div>
+        <div id="moneySaved" class="money">$0</div>
+      </div>
+
+      <div class="chart-wrap">
+        <canvas id="aleChart" aria-label="ALE Inherent vs Residual" role="img"></canvas>
+      </div>
+
+      <hr>
+
+      <section class="methodology">
+        <h3>Methodology</h3>
+        <p>This economic model utilizes the Gordon-Loeb Framework for cybersecurity investment analysis.</p>
+        <p>ALE Calculation: Derived from standard quantitative risk assessment formulas (ALE = SLE × ARO) as defined in CS443 lecture materials.</p>
+        <p>BCDR Impact: Downtime costs are calculated based on recovery time objectives (RTO) for Hot/Warm/Cold sites.</p>
+
+        <h3>References</h3>
+        <ul>
+          <li>Gordon, L. A., & Loeb, M. P. (2002). "The economics of information security investment." ACM TISSEC.</li>
+          <li>Verizon. (2024). "2024 Data Breach Investigations Report (DBIR)."</li>
+          <li>IBM Security. (2024). "Cost of a Data Breach Report 2024."</li>
+        </ul>
+
+        <div class="footer-note">Report Generated: <span id="reportTs"></span></div>
+      </section>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">Prepared for class presentation — static web prototype</div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
